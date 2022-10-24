@@ -5,6 +5,7 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
   const [createAccount, setCreateAccount] = useState({
     name: "",
     password: "",
+    favorites: [],
   });
   const [formData, setFormData] = useState({
     name: "",

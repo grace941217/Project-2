@@ -5,9 +5,11 @@ import SatPics from "./SatPics.jsx";
 import Media from "./Media.jsx";
 import Login from "./Login";
 import Nav from "./Nav";
+import Home from "./Home";
 import "./index.css";
 import { Switch, Route } from "react-router-dom";
 import Mars from "./Mars";
+import UserFavs from "./UserFavs";
 
 function App() {
   //======== USER STATES ===================
@@ -61,14 +63,20 @@ function App() {
         <div>
           <Nav />
           <Switch>
-            <Route>
-              <Media path="/media" />
+            <Route path="/media">
+              <Media />
+            </Route>
+            <Route path="/satpics">
+              <SatPics />
+            </Route>
+            <Route path="/mars">
+              <Mars user={user} loggedIn={loggedIn} />
+            </Route>
+            <Route path="/userfavs">
+              <UserFavs user={user} loggedIn={loggedIn} />
             </Route>
             <Route>
-              <SatPics path="/satpics" />
-            </Route>
-            <Route>
-              <Mars path="/mars" />
+              <Home exact path="/" />
             </Route>
           </Switch>
         </div>

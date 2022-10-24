@@ -3,17 +3,26 @@
     {
       "id": 1,
       "name": "Joe",
-      "password": "123"
+      "password": "123",
+      "favs": []
     },
     {
       "name": "Nils",
       "password": "123",
-      "id": 2
+      "id": 2,
+      "favs": []
     },
     {
       "name": "Adam",
       "password": "123",
-      "id": 3
+      "id": 3,
+      "favs": []
+    },
+    {
+      "name": "Grace",
+      "password": "123",
+      "favorites": [],
+      "id": 4
     }
   ]
 }
