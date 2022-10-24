@@ -4,7 +4,10 @@ import "./App.css";
 import SatPics from "./SatPics.jsx";
 import Media from "./Media.jsx";
 import Login from "./Login";
+import Nav from "./Nav";
 import "./index.css";
+import { Switch, Route } from "react-router-dom";
+import Mars from "./Mars";
 
 function App() {
   //======== USER STATES ===================
@@ -51,12 +54,23 @@ function App() {
 
   console.log("App loggedIn: ", loggedIn);
   console.log("App user: ", Boolean(user), user);
+
   return (
     <div style={{ margin: "0" }}>
       {loggedIn ? (
         <div>
-          <Media />
-          <SatPics />
+          <Nav />
+          <Switch>
+            <Route>
+              <Media path="/media" />
+            </Route>
+            <Route>
+              <SatPics path="/satpics" />
+            </Route>
+            <Route>
+              <Mars path="/mars" />
+            </Route>
+          </Switch>
         </div>
       ) : (
         <Login
@@ -73,3 +87,26 @@ function App() {
 }
 
 export default App;
+//   return (
+//     <div style={{ margin: "0" }}>
+//       {loggedIn ? (
+//         <div>
+//           <Nav />
+//           <Media />
+//           <SatPics />
+//         </div>
+//       ) : (
+//         <Login
+//           className="login"
+//           loggedIn={loggedIn}
+//           allUsers={allUsers}
+//           logInToggle={logInToggle}
+//           onSetUser={onSetUser}
+//           onCreateUser={onCreateUser}
+//         />
+//       )}
+//     </div>
+//   );
+// }
+
+// export default App;
