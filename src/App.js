@@ -22,6 +22,7 @@ function App() {
 
   //======== USER CALLBACKS =============
   const logInToggle = () => {
+    console.log("App loggedIn: ", loggedIn);
     if (loggedIn) setUser("");
     setLoggedIn(!loggedIn);
   };
@@ -48,6 +49,8 @@ function App() {
       .then((data) => console.log("posted!", data));
   };
 
+  console.log("App loggedIn: ", loggedIn);
+  console.log("App user: ", Boolean(user), user);
   return (
     <div style={{ margin: "0" }}>
       {loggedIn ? (

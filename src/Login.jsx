@@ -15,24 +15,27 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
   //console.log("onCreateUser: ", onCreateUser);
 
   //============================================================
-
+  console.log("formData: ", formData);
   const handleLogIn = (e) => {
     e.preventDefault();
     console.log("logging");
     const user = allUsers.filter((user) => {
+      console.log(user.name, user.password);
       return (
         user.name === formData.name &&
         user.password === formData.password &&
         formData.notRobot === true
       );
     });
-    if (user) {
+    console.log("user", user);
+    if (user.length > 0) {
+      console.log("here");
       logInToggle();
       onSetUser(user);
     }
-    console.log("user", user);
   };
   //console.log("formData: ", formData);
+  console.log("loggedIn: ", loggedIn);
 
   const handleDontHaveAccount = () => {
     setHasAccount(!hasAccount);

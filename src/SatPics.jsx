@@ -15,9 +15,6 @@ function SatPics() {
   // const geoKey = configKeys.GMAPS_GEO_KEY;
   const nasaKey = process.env.REACT_APP_NASA_API_KEY;
   const geoKey = process.env.REACT_APP_GMAPS_GEO_KEY;
-  console.log("geoKey: ", process.env.REACT_APP_GMAPS_GEO_KEY);
-  console.log("nasaKey: ", process.env.REACT_APP_NASA_API_KEY);
-  // console.log("nasaKey: ", configKeys.NASA_API_KEY);
 
   const nasa_api = `https://api.nasa.gov/planetary/earth/assets?lon=${longitude}&lat=${latitude}&date=${imageDate}&&dim=0.10&api_key=${nasaKey}`;
   const geocoding_api = `https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=${address}`;
