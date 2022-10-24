@@ -5,7 +5,6 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
   const [createAccount, setCreateAccount] = useState({
     name: "",
     password: "",
-    
   });
   const [formData, setFormData] = useState({
     name: "",
@@ -118,7 +117,7 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
               }
             />
           </label>
-          <label htmlFor="btc">
+          {/* <label htmlFor="btc">
             How much Bitcoin do you own?{" "}
             <input
               type="number"
@@ -132,8 +131,8 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
                 })
               }
             />
-          </label>
-          <label htmlFor="eth">
+          </label> */}
+          {/* <label htmlFor="eth">
             How much ethereum do you own?{" "}
             <input
               type="number"
@@ -147,7 +146,7 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
                 })
               }
             />
-          </label>
+          </label> */}
           <button type="submit">Create Account</button>
         </form>
       )}
