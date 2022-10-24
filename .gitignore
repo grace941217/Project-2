@@ -3,7 +3,7 @@
 
 # api keys
 .env
-.config.js
+./src/config.js
 
 # dependencies
 /node_modules

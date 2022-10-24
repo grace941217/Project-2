@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { configKeys } from "./config";
+
 import Image from "./Image";
 
 function Media() {
@@ -9,7 +9,8 @@ function Media() {
 
   const { data, href } = results;
 
-  const nasaKey = configKeys.NASA_API_KEY;
+  // const nasaKey = process.env.REACT_APP_NASA_API_KEY;
+  // const geoKey = process.env.REACT_APP_GMAPS_GEO_KEY;
   const nasaSearch_api = `https://images-api.nasa.gov/search?q=${query}`;
 
   useEffect(() => {

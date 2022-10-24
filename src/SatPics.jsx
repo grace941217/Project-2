@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { configKeys } from "./config.js";
+//import env from "react-dotenv";
+//import { configKeys } from "./config";
 
 function SatPics() {
   const [image, setImage] = useState("");
@@ -10,8 +11,13 @@ function SatPics() {
   const [longitude, setLongitude] = useState("");
 
   //============= API DATA =======================================
-  const nasaKey = configKeys.NASA_API_KEY;
-  const geoKey = configKeys.GMAPS_GEO_KEY;
+  // const nasaKey = configKeys.NASA_API_KEY;
+  // const geoKey = configKeys.GMAPS_GEO_KEY;
+  const nasaKey = process.env.REACT_APP_NASA_API_KEY;
+  const geoKey = process.env.REACT_APP_GMAPS_GEO_KEY;
+  console.log("geoKey: ", process.env.REACT_APP_GMAPS_GEO_KEY);
+  console.log("nasaKey: ", process.env.REACT_APP_NASA_API_KEY);
+  // console.log("nasaKey: ", configKeys.NASA_API_KEY);
 
   const nasa_api = `https://api.nasa.gov/planetary/earth/assets?lon=${longitude}&lat=${latitude}&date=${imageDate}&&dim=0.10&api_key=${nasaKey}`;
   const geocoding_api = `https://google-maps-geocoding.p.rapidapi.com/geocode/json?address=${address}`;
@@ -30,7 +36,7 @@ function SatPics() {
       fetch(geocoding_api, configObj)
         .then((r) => r.json())
         .then((data) => {
-          console.log("data.results[0]: ", data.results[0]);
+          console.log("data.results[0]: ", data);
           const locationData = data.results[0].geometry.location;
           console.log(locationData);
           setLongitude(locationData.lng);
