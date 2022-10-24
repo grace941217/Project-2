@@ -70,7 +70,7 @@ function App() {
               <SatPics />
             </Route>
             <Route path="/mars">
-              <Mars user={user} loggedIn={loggedIn} />
+              <Mars user={user} loggedIn={loggedIn} allUsers={allUsers} />
             </Route>
             <Route path="/userfavs">
               <UserFavs user={user} loggedIn={loggedIn} />

@@ -4,19 +4,19 @@
       "id": 1,
       "name": "Joe",
       "password": "123",
-      "favs": []
+      "favorites": []
     },
     {
       "name": "Nils",
       "password": "123",
       "id": 2,
-      "favs": []
+      "favorites": []
     },
     {
       "name": "Adam",
       "password": "123",
       "id": 3,
-      "favs": []
+      "favorites": []
     },
     {
       "name": "Grace",

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MarsPic from "./MarsPic";
 
-function Mars({ user, loggedIn }) {
+function Mars({ user, loggedIn, allUsers }) {
   const [formData, setFormData] = useState({
     earthDate: "2015-6-3",
     camera: "",
@@ -74,7 +74,12 @@ function Mars({ user, loggedIn }) {
       </form>
       <div>
         {results.map((image) => (
-          <MarsPic image={image} key={image.id} />
+          <MarsPic
+            image={image}
+            key={image.id}
+            user={user}
+            allUsers={allUsers}
+          />
         ))}
       </div>
     </>
