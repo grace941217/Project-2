@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MarsPic from "./MarsPic";
+import background from "./images/mars-background.jpg";
 
 function Mars({ user, loggedIn, allUsers }) {
   const [formData, setFormData] = useState({
@@ -40,10 +41,33 @@ function Mars({ user, loggedIn, allUsers }) {
       .then((data) => setResults(data.photos));
   };
   console.log("results: ", results);
+  //========= STYLES ========================================
+  const wholePageStyles = {
+    // backgroundColor: "#333",
+    backgroundImage: `url(${background})`,
+    color: "white",
+  };
+
+  const formStyles = {
+    border: "2px solid white",
+  };
+
+  const marsPicContainer = {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 30fr)",
+    gap: "4rem",
+    //aligning items inside the grid segments
+    justifyItems: "center",
+    alignItems: "center",
+    //aligning the whole grid inside its container
+    justifyContent: "center",
+  };
+
+  //===========================================================
   return (
-    <>
+    <div style={wholePageStyles}>
       <h1>Mars Weather</h1>
-      <form action="" onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit} style={formStyles}>
         <label htmlFor="date">Earth Date </label>
         <input
           type="text"
@@ -72,7 +96,7 @@ function Mars({ user, loggedIn, allUsers }) {
         </select>
         <button type="submit">Search Rover's Catalogue</button>
       </form>
-      <div>
+      <div className="mars-pic-container" style={marsPicContainer}>
         {results.map((image) => (
           <MarsPic
             image={image}
@@ -82,7 +106,7 @@ function Mars({ user, loggedIn, allUsers }) {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
