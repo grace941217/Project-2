@@ -42,17 +42,20 @@ function Mars({ user, loggedIn, allUsers }) {
   };
   console.log("results: ", results);
   //========= STYLES ========================================
+  const wholePageWrapperStyles = {
+    height: "1000vh",
+  };
   const wholePageStyles = {
     padding: "2rem",
     // backgroundColor: "#333",
     backgroundImage: `url(${background})`,
-    //height: "200vh",
+    height: "100%",
     backgroundAttachment: "fixed",
     color: "rgb(225, 225, 225)",
   };
 
   const titleStyles = {
-    fontSize: "3rem",
+    fontSize: "5rem",
   };
 
   const formStyles = {
@@ -98,59 +101,61 @@ function Mars({ user, loggedIn, allUsers }) {
 
   //===========================================================
   return (
-    <div style={wholePageStyles}>
-      <div>
-        <h1 style={titleStyles}>Mars Rover Images</h1>
-        <form action="" onSubmit={handleSubmit} style={formStyles}>
-          <label htmlFor="date" style={labelStyles}>
-            Earth Date
-            <input
-              style={inputStyles}
-              type="text"
-              name="earthDate"
-              id="date"
-              placeholder="YYYY-MM-DD"
-              value={formData.earthDate}
-              onChange={handleChange}
+    <div style={wholePageWrapperStyles}>
+      <div style={wholePageStyles}>
+        <div>
+          <h1 style={titleStyles}>Mars Rover Images</h1>
+          <form action="" onSubmit={handleSubmit} style={formStyles}>
+            <label htmlFor="date" style={labelStyles}>
+              Earth Date
+              <input
+                style={inputStyles}
+                type="text"
+                name="earthDate"
+                id="date"
+                placeholder="YYYY-MM-DD"
+                value={formData.earthDate}
+                onChange={handleChange}
+              />
+            </label>
+            <label htmlFor="camera" style={labelStyles}>
+              Camera Select
+              <select
+                style={inputStyles}
+                name="camera"
+                id="camera"
+                value={formData.camera}
+                onChange={handleChange}
+              >
+                <option value="">All Cameras</option>
+                <option value="fhaz">Front Hazard Avoidance</option>
+                <option value="rhaz">Rear Hazard Avoidance</option>
+                <option value="mast">Mast</option>
+                <option value="chemcam">Chemistry</option>
+                <option value="mahli">Mars Hand Lins Imager</option>
+                <option value="mardi">Mars Descent Imager</option>
+                <option value="navcam">Navigation</option>
+                <option value="pancam">Panoramic</option>
+                <option value="minites">
+                  Mini Thermal Emission Spectrometer
+                </option>
+              </select>
+            </label>
+            <button type="submit" style={searchButtonStyles}>
+              Search Rover's Catalogue
+            </button>
+          </form>
+        </div>
+        <div className="mars-pic-container" style={marsPicContainer}>
+          {results.map((image) => (
+            <MarsPic
+              image={image}
+              key={image.id}
+              user={user}
+              allUsers={allUsers}
             />
-          </label>
-          <label htmlFor="camera" style={labelStyles}>
-            Camera Select
-            <select
-              style={inputStyles}
-              name="camera"
-              id="camera"
-              value={formData.camera}
-              onChange={handleChange}
-            >
-              <option value="">All Cameras</option>
-              <option value="fhaz">Front Hazard Avoidance</option>
-              <option value="rhaz">Rear Hazard Avoidance</option>
-              <option value="mast">Mast</option>
-              <option value="chemcam">Chemistry</option>
-              <option value="mahli">Mars Hand Lins Imager</option>
-              <option value="mardi">Mars Descent Imager</option>
-              <option value="navcam">Navigation</option>
-              <option value="pancam">Panoramic</option>
-              <option value="minites">
-                Mini Thermal Emission Spectrometer
-              </option>
-            </select>
-          </label>
-          <button type="submit" style={searchButtonStyles}>
-            Search Rover's Catalogue
-          </button>
-        </form>
-      </div>
-      <div className="mars-pic-container" style={marsPicContainer}>
-        {results.map((image) => (
-          <MarsPic
-            image={image}
-            key={image.id}
-            user={user}
-            allUsers={allUsers}
-          />
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
