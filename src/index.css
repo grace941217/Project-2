@@ -11,3 +11,16 @@ body {
 img {
   width: 50vw;
 }
+/* ========== MARS ==================================== */
+
+.mars-search-button {
+  background-color: #d9ad7c;
+}
+.mars-search-button:hover {
+  color: white;
+}
+.mars-search-button:active {
+  color: #333;
+}
+
+/* ========================================================== */

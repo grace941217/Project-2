@@ -38,8 +38,14 @@ function Media() {
   console.log("query: ", query);
   console.log("displayedResults: ", displayedResults);
 
+  //==================== STYLES ================================================
+
+  const wholePageStyles = {};
+
+  //==========================================================================
+
   return (
-    <div id="about">
+    <div id="about" style={wholePageStyles}>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="search">Search</label>
         <input
