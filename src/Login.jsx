@@ -101,10 +101,13 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
   };
   const inputSectionStyles = {
     display: "flex",
-    paddingBottom: "1rem",
+    padding: "1rem",
+    // padding:
   };
 
-  const submitButtonStyles = {};
+  const submitButtonStyles = {
+    padding: "0.3rem 0.7rem",
+  };
 
   const createAcctButtonStyles = {};
 
@@ -154,8 +157,13 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
                 }
               />
             </label>
-            <button type="submit">Log In</button>
-            <button onClick={handleDontHaveAccount}>
+            <button type="submit" style={submitButtonStyles}>
+              Log In
+            </button>
+            <button
+              onClick={handleDontHaveAccount}
+              style={createAcctButtonStyles}
+            >
               Don't Have an Account?
             </button>
           </form>

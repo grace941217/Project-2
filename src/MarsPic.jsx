@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function MarsPic({ image, user, allUsers }) {
+function MarsPic({ image, user, allUsers, updateUser }) {
   const [isLiked, setIsLiked] = useState(false);
 
   const { camera, earth_date, id, img_src, rover, sol } = image;
@@ -15,23 +15,29 @@ function MarsPic({ image, user, allUsers }) {
 
   console.log("user: ", user);
 
-  //   const handleLikeClick = () => {
-  //     setIsLiked(true);
+  const handleLikeClick = () => {
+    const duplicateCheck = user.favorites.filter(
+      (userImage) => userImage.id === image.id
+    );
+    if (duplicateCheck.length > 0) return null;
 
-  //     const newFavorites = [...user.favorites, image];
+    setIsLiked(true);
 
-  //     const configObj = {
-  //       method: "PATCH",
-  //       headers: {
-  //         "content-type": "application/json",
-  //         application: "application/json",
-  //       },
-  //       body: JSON.stringify({ favorites: newFavorites }),
-  //     };
-  //   };
-  //   fetch(`http://localhost:3000/users/${user.id}`)
-  //     .then((r) => r.json())
-  //     .then((data) => console.log("postData: ", data));
+    const newFavorites = [...user.favorites, image];
+
+    const configObj = {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+        application: "application/json",
+      },
+      body: JSON.stringify({ favorites: newFavorites }),
+    };
+    fetch(`http://localhost:3000/users/${user.id}`, configObj)
+      .then((r) => r.json())
+      .then((data) => updateUser(data));
+  };
+
   //============= STYLES ======================================
   const imageContainerStyles = {
     display: "flex",
@@ -74,9 +80,9 @@ function MarsPic({ image, user, allUsers }) {
         Taken by <span style={roverNameStyles}>{roverName}</span>'s
       </p>
       <p style={captionStylesBottom}> {cameraName}</p>
-      {/* <button onClick={handleLikeClick}>
+      <button onClick={handleLikeClick}>
         {isLiked ? "In favorites" : "Click to Favorite"}
-      </button> */}
+      </button>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MarsPic from "./MarsPic";
 import background from "./images/mars-background.jpg";
 
-function Mars({ user, loggedIn, allUsers }) {
+function Mars({ user, loggedIn, allUsers, updateUser }) {
   const [formData, setFormData] = useState({
     earthDate: "",
     camera: "",
@@ -41,6 +41,7 @@ function Mars({ user, loggedIn, allUsers }) {
       .then((data) => setResults(data.photos));
   };
   console.log("results: ", results);
+
   //========= STYLES ========================================
   const wholePageWrapperStyles = {
     height: "1000vh",
@@ -153,6 +154,7 @@ function Mars({ user, loggedIn, allUsers }) {
               key={image.id}
               user={user}
               allUsers={allUsers}
+              updateUser={updateUser}
             />
           ))}
         </div>

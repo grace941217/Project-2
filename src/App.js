@@ -36,6 +36,10 @@ function App() {
     setUser(user[0]);
   };
 
+  const updateUser = (newUser) => {
+    setUser(newUser);
+  };
+
   const onCreateUser = (user) => {
     // Update Frontend
     setAllUsers([...allUsers, user]);
@@ -70,7 +74,12 @@ function App() {
               <SatPics />
             </Route>
             <Route path="/mars">
-              <Mars user={user} loggedIn={loggedIn} allUsers={allUsers} />
+              <Mars
+                user={user}
+                loggedIn={loggedIn}
+                allUsers={allUsers}
+                updateUser={updateUser}
+              />
             </Route>
             <Route path="/userfavs">
               <UserFavs user={user} loggedIn={loggedIn} />
