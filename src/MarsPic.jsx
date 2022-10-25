@@ -62,7 +62,8 @@ function MarsPic({ image, user, allUsers }) {
 
   const imageStyles = {
     width: "80%",
-    borderRadius: "10px",
+    // borderRadius: "10px",
+    //boxShadow: "20px 80px 2px rgba(38, 38, 38, 0.7)",
   };
 
   //============================================================
