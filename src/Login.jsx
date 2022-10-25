@@ -62,7 +62,7 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
   };
 
   const headingStyles = {
-    paddingBottom: "5rem",
+    paddingBottom: "3rem",
     textAlign: "center",
     fontSize: "5rem",
     textShadow: "4px 4px 0px #333",
@@ -76,6 +76,7 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
     paddingBottom: "5rem",
     paddingTop: "5rem",
     backgroundColor: "rgba(31, 121, 140, 0.7)",
+    height: "20rem",
   };
 
   const labelStyles = {
@@ -84,7 +85,7 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
     alignItems: "flexStart",
     fontSize: "1.5rem",
     fontWeight: "600",
-    gap: "0.5rem",
+    gap: "0.7rem",
   };
 
   const inputStyles = {
@@ -94,22 +95,39 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
     justifyContent: "center",
     marginLeft: "1rem",
     padding: "0.3rem, 0.6rem",
-    gap: "0.8rem",
+    gap: "1.2rem",
     border: "none",
     outline: "none",
     borderRadius: "10px",
   };
+
   const inputSectionStyles = {
     display: "flex",
     padding: "1rem",
     // padding:
   };
 
-  const submitButtonStyles = {
-    padding: "0.3rem 0.7rem",
+  const checkboxStyles = {
+    marginTop: "3rem",
   };
 
-  const createAcctButtonStyles = {};
+  const submitButtonStyles = {
+    margin: "1rem",
+    padding: "0.5rem 1.6rem",
+    borderRadius: "10px",
+    border: "none",
+    outline: "none",
+    color: "rgba(31, 121, 140, 0.7)",
+    fontWeight: "900",
+  };
+
+  const createAcctButtonStyles = {
+    marginTop: "2rem",
+    padding: "0.3rem 1rem",
+    backgroundColor: "#444",
+    color: "rgb(225, 225, 225)",
+    border: "none",
+  };
 
   //========================================================
 
@@ -145,7 +163,7 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
                 />
               </div>
             </div>
-            <label htmlFor="capcha">
+            <label htmlFor="capcha" style={checkboxStyles}>
               I am not a robot
               <input
                 type="checkbox"
