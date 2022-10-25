@@ -7,7 +7,7 @@ import Login from "./Login";
 import Nav from "./Nav";
 import Home from "./Home";
 import "./index.css";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Mars from "./Mars";
 import UserFavs from "./UserFavs";
 
@@ -65,31 +65,28 @@ function App() {
     <div style={{ margin: "0" }}>
       {loggedIn ? (
         <div>
-          <Nav />
-          <Switch>
-            <Route path="/media">
-              <Media />
-            </Route>
-            <Route path="/satpics">
-              <SatPics />
-            </Route>
-            <Route path="/mars">
-              <Mars
+          <BrowserRouter>
+            <Nav />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/media" element={<Media />} />
+              <Route path="/satpics" element={<SatPics />} />
+              <Route path="/mars" element={<Mars 
+                  user={user}
+                  loggedIn={loggedIn}
+                  allUsers={allUsers}
+                  updateUser={updateUser}
+                />} 
+              />
+              <Route path="/userfavs" element={<UserFavs 
                 user={user}
                 loggedIn={loggedIn}
-                allUsers={allUsers}
-                updateUser={updateUser}
+                />}
               />
-            </Route>
-            <Route path="/userfavs">
-              <UserFavs user={user} loggedIn={loggedIn} />
-            </Route>
-            <Route>
-              <Home exact path="/" />
-            </Route>
-          </Switch>
+            </Routes>
+          </BrowserRouter>
         </div>
-      ) : (
+       ) : (
         <Login
           className="login"
           loggedIn={loggedIn}
@@ -98,7 +95,7 @@ function App() {
           onSetUser={onSetUser}
           onCreateUser={onCreateUser}
         />
-      )}
+      )} 
     </div>
   );
 }
