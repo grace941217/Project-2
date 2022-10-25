@@ -56,6 +56,16 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     color: "rgb(225, 225, 225)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+  const headingStyles = {
+    paddingBottom: "5rem",
+    textAlign: "center",
+    fontSize: "5rem",
+    textShadow: "4px 4px 0px #333",
   };
 
   const loginFormStyles = {
@@ -63,7 +73,40 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    paddingBottom: "5rem",
+    paddingTop: "5rem",
+    backgroundColor: "rgba(31, 121, 140, 0.7)",
   };
+
+  const labelStyles = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flexStart",
+    fontSize: "1.5rem",
+    fontWeight: "600",
+    gap: "0.5rem",
+  };
+
+  const inputStyles = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flexStart",
+    justifyContent: "center",
+    marginLeft: "1rem",
+    padding: "0.3rem, 0.6rem",
+    gap: "0.8rem",
+    border: "none",
+    outline: "none",
+    borderRadius: "10px",
+  };
+  const inputSectionStyles = {
+    display: "flex",
+    paddingBottom: "1rem",
+  };
+
+  const submitButtonStyles = {};
+
+  const createAcctButtonStyles = {};
 
   //========================================================
 
@@ -72,30 +115,33 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
       {hasAccount ? (
         <div>
           {/* <h1>{App Title}</h1> */}
-          <h2>Please Log In</h2>
+          <h2 style={headingStyles}>Please Log In</h2>
           <form action="" onSubmit={handleLogIn} style={loginFormStyles}>
-            <label htmlFor="userName">
-              User Name
-              <input
-                type="text"
-                id="userName"
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-              />
-            </label>
-            <label htmlFor="passWord">
-              Password
-              <input
-                type="password"
-                id="passWord"
-                value={formData.password}
-                onChange={(e) =>
-                  setFormData({ ...formData, password: e.target.value })
-                }
-              />
-            </label>
+            <div className="inputs-section" style={inputSectionStyles}>
+              <div className="labels" style={labelStyles}>
+                <label htmlFor="userName">User Name</label>
+                <label htmlFor="passWord">Password</label>
+              </div>
+              <div className="inputs" style={inputStyles}>
+                <input
+                  type="text"
+                  id="userName"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                />
+
+                <input
+                  type="password"
+                  id="passWord"
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
+                />
+              </div>
+            </div>
             <label htmlFor="capcha">
               I am not a robot
               <input
