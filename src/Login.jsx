@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import background from "./images/login-page-3.jpg";
 
 function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
   const [hasAccount, setHasAccount] = useState(true);
@@ -47,14 +48,32 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
     setHasAccount(true);
     onCreateUser(createAccount);
   };
+  //======= STYLES =========================================
+  const wholePageStyles = {
+    //margin: "none",
+    height: "100vh",
+    backgroundImage: `url(${background})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    color: "rgb(225, 225, 225)",
+  };
+
+  const loginFormStyles = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+  //========================================================
 
   return (
-    <div>
+    <div style={wholePageStyles}>
       {hasAccount ? (
         <div>
           {/* <h1>{App Title}</h1> */}
           <h2>Please Log In</h2>
-          <form action="" onSubmit={handleLogIn}>
+          <form action="" onSubmit={handleLogIn} style={loginFormStyles}>
             <label htmlFor="userName">
               User Name
               <input
