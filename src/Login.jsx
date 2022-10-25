@@ -117,7 +117,7 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
     borderRadius: "10px",
     border: "none",
     outline: "none",
-    color: "rgba(31, 121, 140, 0.7)",
+    color: "rgba(31, 121, 140, 1)",
     fontWeight: "900",
   };
 
@@ -187,32 +187,41 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
           </form>
         </div>
       ) : (
-        <form onSubmit={handleCreateUser}>
-          <label htmlFor="newName">
-            User Name
-            <input
-              type="text"
-              name=""
-              id="newName"
-              value={createAccount.name}
-              onChange={(e) =>
-                setCreateAccount({ ...createAccount, name: e.target.value })
-              }
-            />
-          </label>
-          <label htmlFor="newPassword">
-            Choose a Password{" "}
-            <input
-              type="password"
-              name=""
-              id="newPassword"
-              value={createAccount.password}
-              onChange={(e) =>
-                setCreateAccount({ ...createAccount, password: e.target.value })
-              }
-            />
-          </label>
-          {/* <label htmlFor="btc">
+        <div>
+          <h2 style={headingStyles}>Create Your Profile</h2>
+          <form onSubmit={handleCreateUser} style={loginFormStyles}>
+            <div className="input-section" style={inputSectionStyles}>
+              <div className="inputs-section" style={labelStyles}>
+                <label htmlFor="newName">User Name</label>
+                <label htmlFor="newPassword">Choose a Password</label>
+              </div>
+              <div className="inputs" style={inputStyles}>
+                <input
+                  type="text"
+                  name=""
+                  id="newName"
+                  value={createAccount.name}
+                  onChange={(e) =>
+                    setCreateAccount({ ...createAccount, name: e.target.value })
+                  }
+                />
+
+                <input
+                  type="password"
+                  name=""
+                  id="newPassword"
+                  value={createAccount.password}
+                  onChange={(e) =>
+                    setCreateAccount({
+                      ...createAccount,
+                      password: e.target.value,
+                    })
+                  }
+                />
+              </div>
+            </div>
+
+            {/* <label htmlFor="btc">
             How much Bitcoin do you own?{" "}
             <input
               type="number"
@@ -227,7 +236,7 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
               }
             />
           </label> */}
-          {/* <label htmlFor="eth">
+            {/* <label htmlFor="eth">
             How much ethereum do you own?{" "}
             <input
               type="number"
@@ -242,8 +251,11 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
               }
             />
           </label> */}
-          <button type="submit">Create Account</button>
-        </form>
+            <button type="submit" style={submitButtonStyles}>
+              Create Account
+            </button>
+          </form>
+        </div>
       )}
     </div>
   );
