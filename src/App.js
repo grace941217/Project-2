@@ -7,7 +7,7 @@ import Login from "./Login";
 import Nav from "./Nav";
 import Home from "./Home";
 import "./index.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Mars from "./Mars";
 import UserFavs from "./UserFavs";
 
@@ -66,7 +66,7 @@ function App() {
 
   return (
     <div style={{ margin: "0" }}>
-      {loggedIn ? (
+      {/* {loggedIn ? ( */}
         <div>
           <BrowserRouter>
             <Nav />
@@ -130,3 +130,18 @@ export default App;
 // }
 
 // export default App;
+
+
+// return (
+//   <div>
+//     <BrowserRouter>
+//       <Nav />
+//       <Routes>
+//         <Route exact path="/" element={<Home />} />
+//         <Route path="/projects" element={<Projects />} />
+//         <Route path="/pictures" element={<Pictures />} />
+//         <Route path="/comments" element={<Comments />} />
+//       </Routes>
+//     </BrowserRouter>
+//   </div>
+// );
