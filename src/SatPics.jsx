@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import background from "./images/login-page-1.jpg";
+import backgroundTwo from "./images/satellite.jpg";
 //import env from "react-dotenv";
 //import { configKeys } from "./config";
 
@@ -66,33 +68,84 @@ function SatPics() {
 
   console.log("address: ", address);
   console.log("imageDate: ", imageDate);
+
+  //================= STYLES ========================================
+
+  const wholePageStyles = {
+    backgroundColor: "#E9F1F0",
+    backgroundImage: `url(${backgroundTwo})`,
+    // backgroundImage: `url(${background})`,
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "right",
+    height: "100vh",
+  };
+  const mainBodyStyles = {
+    display: "flex",
+    justifyContent: "space-between",
+    //alignItems: "baseline",
+  };
+  const formAreaStyles = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    //width: "30rem",
+    height: "50rem",
+  };
+
+  const inputStyles = {
+    border: "none",
+    borderRadius: "10px",
+    fontSize: "1.2rem",
+    margin: "1rem",
+    // padding: "0.5rem, 1.4rem",
+    width: "18rem",
+  };
+
+  const imageAreaStyles = {
+    border: "2px solid #444",
+    width: "50rem",
+    height: "100vh",
+    marginRight: "40rem",
+    //alignSelf: "flex-end",
+  };
+
   //============= RETURN =======================================
   return (
-    <div>
+    <div style={wholePageStyles}>
       {/* <NavBar onChangePage={setPage} /> */}
-      <img src={image} alt="" className="sat-pic" />
-      <input
-        type="text"
-        name="address"
-        id="address"
-        placeholder="Number Street, City, StateCode"
-        value={addressInput}
-        onChange={inputChange}
-      />
-      <input
-        type="text"
-        name="date"
-        id="date"
-        placeholder="YYYY-MM-DD"
-        value={imageDate}
-        onChange={imageDateChange}
-      />
-      <button onClick={addressClick}>set address</button>
+      <div style={mainBodyStyles}>
+        <div className="form-area" style={formAreaStyles}>
+          <input
+            style={inputStyles}
+            type="text"
+            name="address"
+            id="address"
+            placeholder="Number Street, City, StateCode"
+            value={addressInput}
+            onChange={inputChange}
+          />
+          <input
+            style={inputStyles}
+            type="text"
+            name="date"
+            id="date"
+            placeholder="YYYY-MM-DD"
+            value={imageDate}
+            onChange={imageDateChange}
+          />
+          <button onClick={addressClick}>set address</button>
+        </div>
+        <div style={imageAreaStyles}>
+          <img src={image} alt="" className="sat-pic" />
+        </div>
+      </div>
       {/* <Routes>
           <Route path="/about/*" element={<About />} />
           <Route path="/projects/:id/" element={<ProjectDetail />} />
           <Route path="/projects/" element={<ProjectList />} />
-  
+          
           <Route path="/" element={<Home />} />
         </Routes> */}
       {/* {getCurrentPage()} */}

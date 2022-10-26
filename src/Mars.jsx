@@ -34,6 +34,7 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     console.log("submitting");
     //if (formData.earthDate)
     fetch(formData.camera ? marsCamUrl : marsNoCamUrl)
@@ -142,7 +143,11 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
                 </option>
               </select>
             </label>
-            <button type="submit" style={searchButtonStyles}>
+            <button
+              type="submit"
+              style={searchButtonStyles}
+              className="mars-search-button"
+            >
               Search Rover's Catalogue
             </button>
           </form>

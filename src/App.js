@@ -11,6 +11,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Mars from "./Mars";
 import UserFavs from "./UserFavs";
 
+// NOTE:
+// PADDING IN TEXT INPUTS, BACKGROUND-COLOR IN PSUEDO CLASSES DONT WORK IN REACT
+
 function App() {
   //======== USER STATES ===================
   const [loggedIn, setLoggedIn] = useState(false);
@@ -71,22 +74,25 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route path="/media" element={<Media />} />
               <Route path="/satpics" element={<SatPics />} />
-              <Route path="/mars" element={<Mars 
-                  user={user}
-                  loggedIn={loggedIn}
-                  allUsers={allUsers}
-                  updateUser={updateUser}
-                />} 
+              <Route
+                path="/mars"
+                element={
+                  <Mars
+                    user={user}
+                    loggedIn={loggedIn}
+                    allUsers={allUsers}
+                    updateUser={updateUser}
+                  />
+                }
               />
-              <Route path="/userfavs" element={<UserFavs 
-                user={user}
-                loggedIn={loggedIn}
-                />}
+              <Route
+                path="/userfavs"
+                element={<UserFavs user={user} loggedIn={loggedIn} />}
               />
             </Routes>
           </BrowserRouter>
         </div>
-       {/* ) : (
+      ) : (
         <Login
           className="login"
           loggedIn={loggedIn}
@@ -95,7 +101,7 @@ function App() {
           onSetUser={onSetUser}
           onCreateUser={onCreateUser}
         />
-      )}  */}
+      )}
     </div>
   );
 }
