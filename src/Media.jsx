@@ -20,7 +20,7 @@ function Media() {
     if (confirmedQuery) {
       fetch(nasaSearch_api)
         .then((r) => r.json())
-        .then((data) => setResults(data.collection.items.slice(0, 5)));
+        .then((data) => setResults(data.collection.items.slice(0, 10)));
     }
   }, [confirmedQuery]);
 
