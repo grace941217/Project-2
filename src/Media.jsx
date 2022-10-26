@@ -79,14 +79,14 @@ function Media() {
   //   // backgroundAttachment: "fixed",
   // };
   const wholeFormStyles = {
-    // backgroundImage: `url(${backgroundThree})`,
-    // backgroundSize: "cover",
-    // backgroundRepeat: "no-repeat",
-    // backgroundPosition: "left",
-    // // backgroundAttachment: "fixed",
-    // height: "100vh",
     width: "30rem",
-    // //borderRight:
+    display: "flex",
+    flexDirection: "column",
+    //justifyContent: "flex-end",
+    //alignItems: "flex-start",
+    textAlign: "left",
+    marginTop: "10rem",
+    marginLeft: "1rem",
   };
 
   const displayStyles = {
@@ -131,12 +131,28 @@ function Media() {
   };
 
   const inputStyles = {
-    // padding: "05rem, 0.8rem",
+    padding: "05rem, 0.8rem",
+    fontSize: "1.4rem",
+    backgroundColor: "rgb(250, 250, 250)",
   };
 
-  // const imageStyles = {
-  //   width: "10rem",
-  // };
+  const searchLabelStyles = {
+    fontSize: "1.4rem",
+    paddingRight: "1rem",
+    fontWeight: "500",
+    color: "rgb(250, 250, 250)",
+    // textAlign: "left",
+    alignSelf: "start",
+  };
+
+  const searchButtonStyles = {
+    padding: "0.6rem 1.9rem",
+    fontSize: "1.1rem",
+    marginLeft: "1rem",
+    borderRadius: "20px",
+    backgroundColor: "#0C50F9",
+    color: "rgb(250, 250, 250)",
+  };
   //==========================================================================
 
   return (
@@ -147,16 +163,20 @@ function Media() {
       </h2> */}
         <div id="about" style={wholeFormStyles}>
           <form action="" onSubmit={handleSubmit}>
-            <label htmlFor="search">Search</label>
-            <input
-              type="text"
-              name="search"
-              id="search"
-              value={query}
-              onChange={handleSearchChange}
-              style={inputStyles}
-            />
-            <input type="submit" name="" id="" />
+            <label htmlFor="search" style={searchLabelStyles}>
+              Search
+            </label>
+            <div className="inputs-wrapper">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                value={query}
+                onChange={handleSearchChange}
+                style={inputStyles}
+              />
+              <input type="submit" name="" id="" style={searchButtonStyles} />
+            </div>
           </form>
         </div>
         <div className="display-section" style={displayStyles}>
