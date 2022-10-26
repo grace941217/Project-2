@@ -34,7 +34,9 @@ function Media() {
   };
 
   const displayedResults = results.map((image) => {
-    return <Image key={image.data[0].nasa_id} image={image} />;
+    return (
+      <Image key={image.data[0].nasa_id} image={image} style={imageStyles} />
+    );
   });
 
   console.log("results: ", results);
@@ -86,6 +88,22 @@ function Media() {
     fontWeight: "800",
     fontSize: "5rem",
   };
+
+  const displayGridStyles = {
+    border: "2px solid white",
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 45fr)",
+    gap: "1rem",
+    //aligning items inside the grid segments
+    justifyItems: "center",
+    alignItems: "center",
+    //aligning the whole grid inside its container
+    justifyContent: "center",
+  };
+
+  const imageStyles = {
+    width: "10rem",
+  };
   //==========================================================================
 
   return (
@@ -107,7 +125,9 @@ function Media() {
         <h2 style={displayHeaderStyles}>
           <span style={logoStyles}>NASA</span> Images
         </h2>
-        <div className="display-grid">{displayedResults}</div>
+        <div className="display-grid" style={displayGridStyles}>
+          {displayedResults}
+        </div>
       </div>
     </div>
   );
