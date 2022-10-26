@@ -122,7 +122,7 @@ function SatPics() {
   const formAreaStyles = {
     margin: "6rem",
     backgroundColor: "rgba(60, 60, 60, 0.7)",
-    paddingLeft: "3rem",
+    //paddingLeft: "3rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -149,11 +149,13 @@ function SatPics() {
 
   const imageAreaStyles = {
     //border: "2px solid #444",
+    paddingRight: "1rem",
     width: "50rem",
     height: "100vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    overflow: "none",
   };
 
   const imageStyles = {
