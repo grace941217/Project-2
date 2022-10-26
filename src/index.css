@@ -14,13 +14,21 @@ img {
 /* ========== MARS ==================================== */
 
 .mars-search-button {
+  /* background-color: #d9ad7c; */
+  width: 10rem;
+  padding: 0.5rem 0.8rem;
   background-color: #d9ad7c;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
 }
 .mars-search-button:hover {
   color: white;
+  background-color: dodgerblue;
 }
 .mars-search-button:active {
   color: #333;
+  background-color: #333;
 }
 
 /* ========================================================== */

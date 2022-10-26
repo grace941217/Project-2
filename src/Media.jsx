@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import background from "./images/login-page-1.jpg";
-import backgroundTwo from "./images/nasa-label.jpg";
+import backgroundTwo from "./images/nasa-label-cropped2.jpg";
 import backgroundThree from "./images/observation.jpg";
 
 import Image from "./Image";
@@ -34,9 +34,7 @@ function Media() {
   };
 
   const displayedResults = results.map((image) => {
-    return (
-      <Image key={image.data[0].nasa_id} image={image} style={imageStyles} />
-    );
+    return <Image key={image.data[0].nasa_id} image={image} />;
   });
 
   console.log("results: ", results);
@@ -44,6 +42,9 @@ function Media() {
   console.log("displayedResults: ", displayedResults);
 
   //==================== STYLES ================================================
+  const outerPageWrapperStyles = {
+    height: "1000vh",
+  };
   const outerPageStyles = {
     // backgroundImage: `url(${backgroundTwo})`,
     // backgroundSize: "contain",
@@ -51,29 +52,55 @@ function Media() {
     display: "flex",
     //height: "100vh",
     justifyContent: "flex-start",
-    backgroundColor: "#E9F1F0",
-  };
-  const wholeFormStyles = {
-    backgroundImage: `url(${backgroundThree})`,
-
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "left",
-    height: "100vh",
-    width: "45rem",
-    //borderRight:
-  };
-
-  const displayStyles = {
+    //backgroundColor: "#E9F1F0",
     color: "white",
-    width: "1fr",
+    //width: "1fr",
     backgroundImage: `url(${backgroundTwo})`,
+    backgroundAttachment: "fixed",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     flexGrow: "2",
     textAlign: "center",
     fontSize: "1rem",
     // fontSize: "",
+    height: "100%",
+
+    // backgroundAttachment: "fixed",
+  };
+  // const outerPageStyles = {
+  //   // backgroundImage: `url(${backgroundTwo})`,
+  //   // backgroundSize: "contain",
+  //   // backgroundBlendMode: "lighten",
+  //   display: "flex",
+  //   //height: "100vh",
+  //   justifyContent: "flex-start",
+  //   backgroundColor: "#E9F1F0",
+
+  //   // backgroundAttachment: "fixed",
+  // };
+  const wholeFormStyles = {
+    // backgroundImage: `url(${backgroundThree})`,
+    // backgroundSize: "cover",
+    // backgroundRepeat: "no-repeat",
+    // backgroundPosition: "left",
+    // // backgroundAttachment: "fixed",
+    // height: "100vh",
+    width: "30rem",
+    // //borderRight:
+  };
+
+  const displayStyles = {
+    // color: "white",
+    // width: "1fr",
+    // backgroundImage: `url(${backgroundTwo})`,
+    // // backgroundAttachment: "fixed",
+    // backgroundSize: "cover",
+    // backgroundRepeat: "no-repeat",
+    // flexGrow: "2",
+    // textAlign: "center",
+    // fontSize: "1rem",
+    // // fontSize: "",
+    // height: "100vh",
   };
 
   const displayHeaderStyles = {
@@ -90,43 +117,55 @@ function Media() {
   };
 
   const displayGridStyles = {
-    border: "2px solid white",
+    //width: "100%",
+    //border: "2px solid white",
     display: "grid",
-    gridTemplateColumns: "repeat(2, 45fr)",
+    gridTemplateColumns: "repeat(1, 45fr)",
     gap: "1rem",
     //aligning items inside the grid segments
     justifyItems: "center",
     alignItems: "center",
     //aligning the whole grid inside its container
     justifyContent: "center",
+    // backgroundColor: "rgba(60, 60, 60, 0)",
   };
 
-  const imageStyles = {
-    width: "10rem",
+  const inputStyles = {
+    // padding: "05rem, 0.8rem",
   };
+
+  // const imageStyles = {
+  //   width: "10rem",
+  // };
   //==========================================================================
 
   return (
-    <div className="outer" style={outerPageStyles}>
-      <div id="about" style={wholeFormStyles}>
-        <form action="" onSubmit={handleSubmit}>
-          <label htmlFor="search">Search</label>
-          <input
-            type="text"
-            name="search"
-            id="search"
-            value={query}
-            onChange={handleSearchChange}
-          />
-          <input type="submit" name="" id="" />
-        </form>
-      </div>
-      <div className="display-section" style={displayStyles}>
-        <h2 style={displayHeaderStyles}>
-          <span style={logoStyles}>NASA</span> Images
-        </h2>
-        <div className="display-grid" style={displayGridStyles}>
-          {displayedResults}
+    <div className="wrapper" style={outerPageWrapperStyles}>
+      <div className="outer" style={outerPageStyles}>
+        {/* <h2 style={displayHeaderStyles}>
+        <span style={logoStyles}>NASA</span> Images
+      </h2> */}
+        <div id="about" style={wholeFormStyles}>
+          <form action="" onSubmit={handleSubmit}>
+            <label htmlFor="search">Search</label>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              value={query}
+              onChange={handleSearchChange}
+              style={inputStyles}
+            />
+            <input type="submit" name="" id="" />
+          </form>
+        </div>
+        <div className="display-section" style={displayStyles}>
+          <h2 style={displayHeaderStyles}>
+            <span style={logoStyles}>NASA</span> Images
+          </h2>
+          <div className="display-grid" style={displayGridStyles}>
+            {displayedResults}
+          </div>
         </div>
       </div>
     </div>
