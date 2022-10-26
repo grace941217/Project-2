@@ -117,7 +117,7 @@ function SatPics() {
   const mainBodyStyles = {
     display: "flex",
     justifyContent: "space-between",
-    //alignItems: "baseline",
+    alignItems: "center",
   };
   const formAreaStyles = {
     margin: "6rem",
@@ -129,6 +129,7 @@ function SatPics() {
     alignItems: "center",
     //width: "30rem",
     height: "40rem",
+    textAlign: "center",
   };
 
   const inputStyles = {
@@ -141,6 +142,7 @@ function SatPics() {
   };
 
   const buttonStyles = {
+    margin: "1rem",
     padding: "0.8rem 1.8rem",
     borderRadius: "20px",
     backgroundColor: "gold",
@@ -149,7 +151,7 @@ function SatPics() {
 
   const imageAreaStyles = {
     //border: "2px solid #444",
-    paddingRight: "1rem",
+    paddingRight: "6rem",
     width: "50rem",
     height: "100vh",
     display: "flex",
@@ -159,7 +161,7 @@ function SatPics() {
   };
 
   const imageStyles = {
-    //width: "50rem",
+    width: "100%",
   };
   //============= RETURN =======================================
   return (
