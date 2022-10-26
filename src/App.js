@@ -66,7 +66,7 @@ function App() {
 
   return (
     <div style={{ margin: "0" }}>
-      {/* {loggedIn ? ( */}
+      {loggedIn ? (
         <div>
           <BrowserRouter>
             <Nav />
@@ -130,7 +130,6 @@ export default App;
 // }
 
 // export default App;
-
 
 // return (
 //   <div>
