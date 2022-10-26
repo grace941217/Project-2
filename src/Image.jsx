@@ -24,7 +24,8 @@ function Image({ image }) {
   };
 
   const imageStyles = {
-    width: "25rem",
+    width: "30rem",
+    boxShadow: "0 0 10px #222",
   };
 
   const containerStyles = {
