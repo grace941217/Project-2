@@ -124,9 +124,10 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
   const createAcctButtonStyles = {
     marginTop: "2rem",
     padding: "0.3rem 1rem",
-    backgroundColor: "#444",
-    color: "rgb(225, 225, 225)",
+    backgroundColor: "rgba(60, 60, 60, 0)",
+    color: "rgba(225, 225, 225)",
     border: "none",
+    textDecoration: "underline",
   };
 
   //========================================================
@@ -136,8 +137,9 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
       {hasAccount ? (
         <div>
           {/* <h1>{App Title}</h1> */}
-          <h2 style={headingStyles}>Please Log In</h2>
+          <h2 style={headingStyles}>NASA Playground</h2>
           <form action="" onSubmit={handleLogIn} style={loginFormStyles}>
+            <h3>Please Log In</h3>
             <div className="inputs-section" style={inputSectionStyles}>
               <div className="labels" style={labelStyles}>
                 <label htmlFor="userName">User Name</label>
