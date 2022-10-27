@@ -27,10 +27,12 @@ function App() {
       .then((data) => setAllUsers(data));
   }, []);
   console.log("allUsers: ", allUsers);
+  console.log("users: ", user);
+
 
   //======== USER CALLBACKS =============
   const logInToggle = () => {
-    console.log("App loggedIn: ", loggedIn);
+    // console.log("App loggedIn: ", loggedIn);
     if (loggedIn) setUser("");
     setLoggedIn(!loggedIn);
   };
@@ -42,11 +44,12 @@ function App() {
   const updateUser = (newUser) => {
     setUser(newUser);
   };
+  // console.log(user)
 
   const onCreateUser = (user) => {
     // Update Frontend
     setAllUsers([...allUsers, user]);
-    console.log("in onCreateUser");
+    // console.log("in onCreateUser");
     // Update Backend
     const configObj = {
       method: "POST",
@@ -61,12 +64,12 @@ function App() {
       .then((data) => console.log("posted!", data));
   };
 
-  console.log("App loggedIn: ", loggedIn);
-  console.log("App user: ", Boolean(user), user);
+  // console.log("App loggedIn: ", loggedIn);
+  // console.log("App user: ", Boolean(user), user);
 
   return (
     <div style={{ margin: "0" }}>
-      {/* {loggedIn ? ( */}
+      {loggedIn ? (
         <div>
           <BrowserRouter>
             <Nav />
@@ -87,12 +90,12 @@ function App() {
               />
               <Route
                 path="/userfavs"
-                element={<UserFavs user={user} loggedIn={loggedIn} />}
+                element={<UserFavs allUsers={allUsers} loggedIn={loggedIn} />}
               />
             </Routes>
           </BrowserRouter>
         </div>
-      ) : (
+       ) : (
         <Login
           className="login"
           loggedIn={loggedIn}
@@ -101,7 +104,7 @@ function App() {
           onSetUser={onSetUser}
           onCreateUser={onCreateUser}
         />
-      )}
+      )} 
     </div>
   );
 }
@@ -132,16 +135,3 @@ export default App;
 // export default App;
 
 
-// return (
-//   <div>
-//     <BrowserRouter>
-//       <Nav />
-//       <Routes>
-//         <Route exact path="/" element={<Home />} />
-//         <Route path="/projects" element={<Projects />} />
-//         <Route path="/pictures" element={<Pictures />} />
-//         <Route path="/comments" element={<Comments />} />
-//       </Routes>
-//     </BrowserRouter>
-//   </div>
-// );
