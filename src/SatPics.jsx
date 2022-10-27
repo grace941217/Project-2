@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import background from "./images/login-page-1.jpg";
+// import background from "./images/login-page-1.jpg";
 import backgroundTwo from "./images/satellite-2.jpg";
 
 //import env from "react-dotenv";
@@ -36,9 +36,9 @@ function SatPics() {
       fetch(geocoding_api, configObj)
         .then((r) => r.json())
         .then((data) => {
-          console.log("data.results[0]: ", data);
+          // console.log("data.results[0]: ", data);
           const locationData = data.results[0].geometry.location;
-          console.log(locationData);
+          // console.log(locationData);
           setLongitude(locationData.lng);
           setLatitude(locationData.lat);
         });
@@ -67,8 +67,8 @@ function SatPics() {
     setImageDate(e.target.value);
   };
 
-  console.log("address: ", address);
-  console.log("imageDate: ", imageDate);
+  // console.log("address: ", address);
+  // console.log("imageDate: ", imageDate);
 
   //================= STYLES ========================================
   // PADDING IN TEXT INPUTS, BACKGROUND-COLOR IN PSUEDO CLASSES DONT WORK IN REACT
@@ -80,6 +80,8 @@ function SatPics() {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "right",
     height: "100vh",
+    justifyContent: "flex-start",
+    display: "flex",
     //======
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
@@ -178,7 +180,7 @@ function SatPics() {
             type="text"
             name="address"
             id="address"
-            placeholder="Number Street, City, StateCode"
+            placeholder="Street, City, State, Zipcode"
             value={addressInput}
             onChange={inputChange}
           />
@@ -192,7 +194,7 @@ function SatPics() {
             onChange={imageDateChange}
           />
           <button onClick={addressClick} style={buttonStyles}>
-            set address
+            Search
           </button>
         </div>
         <div style={imageAreaStyles}>

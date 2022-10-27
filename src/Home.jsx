@@ -1,7 +1,7 @@
 import React from "react";
 import video from "./images/video-1.mp4"
 
-function Home() {
+function Home({user}) {
   const content = {
     position: "absolute",
     width: "100%",
@@ -11,8 +11,12 @@ function Home() {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    color: "white",
+    fontFamily: "Georgia",
+    color: "rgb(183, 177, 201)",
     fontSize: "60px",
+    textShadow: "2px 2px 8px blue",
+    // textShadow: "2px 2px 5px black, 0 0 1em red, 1 1 0.5em blue",
+    // textShadow: "2px 2px 5px black, 0px 0px 1em red, 1 1 0.5em blue",
   }
 
   return (
@@ -26,7 +30,7 @@ function Home() {
         }}
       />
       <div className="content" >
-        <h1 style={content}>Welcome!</h1>
+        <h1 style={content}>WELCOME, {user.name.toUpperCase()}!</h1>
       </div>
     </div>
   )

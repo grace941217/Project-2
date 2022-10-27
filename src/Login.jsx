@@ -17,34 +17,34 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
   //console.log("onCreateUser: ", onCreateUser);
 
   //============================================================
-  console.log("formData: ", formData);
+  // console.log("formData: ", formData);
   const handleLogIn = (e) => {
     e.preventDefault();
-    console.log("logging");
+    // console.log("logging");
     const user = allUsers.filter((user) => {
-      console.log(user.name, user.password);
+      // console.log(user.name, user.password);
       return (
         user.name === formData.name &&
         user.password === formData.password &&
         formData.notRobot === true
       );
     });
-    console.log("user", user);
+    // console.log("user", user);
     if (user.length > 0) {
-      console.log("here");
+      // console.log("here");
       logInToggle();
       onSetUser(user);
     }
   };
   //console.log("formData: ", formData);
-  console.log("loggedIn: ", loggedIn);
+  // console.log("loggedIn: ", loggedIn);
 
   const handleDontHaveAccount = () => {
     setHasAccount(!hasAccount);
   };
 
   const handleCreateUser = () => {
-    console.log("in handleCreateUser");
+    // console.log("in handleCreateUser");
     setHasAccount(true);
     onCreateUser(createAccount);
   };
@@ -104,7 +104,6 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
   const inputSectionStyles = {
     display: "flex",
     padding: "1rem",
-    // padding:
   };
 
   const checkboxStyles = {
@@ -136,7 +135,6 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
     <div style={wholePageStyles}>
       {hasAccount ? (
         <div>
-          {/* <h1>{App Title}</h1> */}
           <h2 style={headingStyles}>NASA Playground</h2>
           <form action="" onSubmit={handleLogIn} style={loginFormStyles}>
             <h3>Please Log In</h3>
@@ -154,7 +152,6 @@ function Login({ loggedIn, allUsers, logInToggle, onSetUser, onCreateUser }) {
                     setFormData({ ...formData, name: e.target.value })
                   }
                 />
-
                 <input
                   type="password"
                   id="passWord"

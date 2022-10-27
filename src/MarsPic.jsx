@@ -2,18 +2,15 @@ import React, { useState } from "react";
 
 function MarsPic({ image, user, allUsers, updateUser }) {
   const [isLiked, setIsLiked] = useState(false);
-
-  const { camera, earth_date, id, img_src, rover, sol } = image;
-
-  const cameraName = camera.full_name;
-  const cameraAbbr = camera.name;
+  const { camera, img_src, rover } = image;
 
   const roverName = rover.name;
-  const roverLandingDate = rover.landing_date;
-  const roverLaunchDate = rover.launch_date;
-  const roverStatus = rover.status;
-
-  console.log("user: ", user);
+  const cameraName = camera.full_name;
+  // const cameraAbbr = camera.name;
+  // const roverLandingDate = rover.landing_date;
+  // const roverLaunchDate = rover.launch_date;
+  // const roverStatus = rover.status;
+  // console.log("user: ", user);
 
   const handleLikeClick = () => {
     const duplicateCheck = user.favorites.filter(

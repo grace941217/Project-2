@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(22, 22, 23);
 }
 
 #sat-pics,
@@ -33,16 +34,16 @@ img {
 
 /* =========== Nav =============================================== */
 .nav {
-  background-color: #333;
-  color: white;
+  background-color: rgb(247, 247, 252, 0.20);
+  color: rgb(194, 194, 194);
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
   padding: 0 1rem;
-  font-family: "Times New Roman";
-  font-size: 1.2rem;
-  font-weight: bold, oblique;
+  /* font-family: "Times New Roman"; */
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .nav ul {
@@ -70,3 +71,4 @@ img {
 }
 
 
+/* =========== Favs =============================================== */
