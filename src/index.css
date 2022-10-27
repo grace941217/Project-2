@@ -31,4 +31,42 @@ img {
   background-color: #333;
 }
 
-/* ========================================================== */
+/* =========== Nav =============================================== */
+.nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+  font-family: "Times New Roman";
+  font-size: 1.2rem;
+  font-weight: bold, oblique;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav li.active {
+  background-color: #333;
+}
+
+.nav li:hover {
+  background-color: #777;
+}
+
+

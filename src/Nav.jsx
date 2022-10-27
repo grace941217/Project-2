@@ -3,12 +3,14 @@ import { NavLink } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav>
-      <NavLink exact to="/">Home</NavLink>
-      <NavLink to="/media">Media</NavLink>
-      <NavLink to="/satpics">Earth From Satellite</NavLink>
-      <NavLink to="/mars">Mars</NavLink>
-      <NavLink to="/userfavs">Favorites</NavLink>
+    <nav className="nav">
+      <ul>
+        <li className="active"><NavLink exact to="/">Home</NavLink></li>
+        <li className="active"><NavLink to="/media">Media</NavLink></li>
+        <li className="active"><NavLink to="/satpics">Earth</NavLink></li>
+        <li className="active"><NavLink to="/mars">Mars</NavLink></li>
+        <li className="active"><NavLink to="/userfavs">Favorites</NavLink></li>
+      </ul>
     </nav>
   );
 }
