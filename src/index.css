@@ -39,8 +39,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  gap: 2rem;
-  padding: 0 1rem;
+  /* gap: 10rem; */
+  padding: 0 2rem;
   /* font-family: "Times New Roman"; */
   font-size: 17px;
   font-weight: bold;
@@ -63,6 +63,7 @@ img {
 }
 
 .nav li.active {
+  border-radius: 50px;
   background-color: #333;
 }
 
