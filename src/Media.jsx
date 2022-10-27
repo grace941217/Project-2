@@ -16,6 +16,8 @@ function Media() {
   const geoKey = process.env.REACT_APP_GMAPS_GEO_KEY;
   const nasaSearch_api = `https://images-api.nasa.gov/search?q=${query}`;
 
+  console.log("results: ", results);
+
   useEffect(() => {
     if (confirmedQuery) {
       fetch(nasaSearch_api)
@@ -127,7 +129,7 @@ function Media() {
     //aligning the whole grid inside its container
     justifyContent: "center",
     // backgroundColor: "rgba(60, 60, 60, 0)",
-    backgroundColor: "rgb(0,0,0,.75)"
+    backgroundColor: "rgb(0,0,0,.75)",
   };
 
   const inputStyles = {
