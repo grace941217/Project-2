@@ -42,7 +42,7 @@ function UserFavs({ user }) {
     // fontFamily: "Georgia",
     color: "rgb(120, 132, 191)",
     textShadow: "5px 5px 5px #222",
-    fontSize: "50px",
+    fontSize: "30px",
   };
 
   const picGridStyles = {
