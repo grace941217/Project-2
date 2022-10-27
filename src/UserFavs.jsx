@@ -1,5 +1,5 @@
 import React from "react";
-import bgimage from "./images/favorites.jpg"
+import backgroundImage from "./images/pexels-felix-mittermeier-1146134.jpg"
 
 function UserFavs({ user }) {
   const { favorites } = user
@@ -14,7 +14,7 @@ function UserFavs({ user }) {
 
   const wholePageStyles = {
     backgroundColor: "black",
-    backgroundImage: `url(${bgimage})`,
+    backgroundImage: `url(${backgroundImage})`,
     justifyContent: "flex-start",
     display: "flex",
     backgroundAttachment: "fixed",
@@ -27,10 +27,13 @@ function UserFavs({ user }) {
   };
 
   const imageContainerStyles = {
-    display: "flex",
-    float: "center",
-    flexDirection: "column",
-    justifyContent: "center",
+    display: "grid",
+    // float: "center",
+    flexDirection: "row",
+    gridTemplateColumns: "50px, 100px, 100px",
+    gridAutoRows: "50px",
+    gridGap: "20px",
+    justifyContent: "space-around",
     alignItems: "center",
     paddingBottom: "10rem",
     paddingTop: "2rem",
@@ -38,15 +41,15 @@ function UserFavs({ user }) {
   };
 
   const content = {
-    // position: "absolute",
-    // width: "100%",
+    position: "absolute",
+    width: "100%",
     // height: "70%",
     // top: "50",
-    // bottom: "50%",
+    // bottom: "50",
     display: "flex",
-    // flexDirection: "column",
+    flexDirection: "column",
     justifyContent: "center",
-    alignSelf: "center",
+    // alignSelf: "center",
     textAlign: "center",
     // fontFamily: "Georgia",
     color: "rgb(120, 132, 191)",
@@ -62,9 +65,9 @@ function UserFavs({ user }) {
 
   return (
     <div style={wholePageStyles}>
+      <h1 style={content}>Favorites</h1>
       <div style={imageContainerStyles} >
-        <h1 style={content}>Favorites</h1>
-        <div style={imageStyles}>{listFavs}</div>
+        {listFavs}
       </div>
     </div>
   )
