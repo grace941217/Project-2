@@ -1,14 +1,14 @@
 import React from "react";
 
 function Image({ image }) {
-  console.log("image: ", image);
-  const { data, href, links } = image;
+  const { data, links } = image;
   const title = data[0].title;
-  const creator = data[0].secondary_creator;
   const description = data[0].description;
-  const id = data[0].nasa_id;
-  const type = data[0].media_type;
   const thumb = links[0].href;
+  // const id = data[0].nasa_id;
+  // const creator = data[0].secondary_creator;
+  // const type = data[0].media_type;
+  // console.log("image: ", image);
 
   //========================= STYLES =============================================
   const titleStyles = {
@@ -36,7 +36,6 @@ function Image({ image }) {
   return (
     <div style={containerStyles}>
       <h3 style={titleStyles}>{title}</h3>
-
       <img src={thumb} alt="" style={imageStyles} />
       <p style={captionStyles}>
         {description !== title ? description : "No Caption Available"}

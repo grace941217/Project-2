@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MarsPic from "./MarsPic";
 import background from "./images/mars-background.jpg";
 
@@ -8,7 +8,7 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
     camera: "",
   });
   const [results, setResults] = useState([]);
-  console.log("formData: ", formData);
+  // console.log("formData: ", formData);
   const nasaKey = process.env.REACT_APP_NASA_API_KEY;
   //const marsWeatherUrl = `https: //api.nasa.gov/insight_weather/?api_key=${nasaKey}&feedtype=json&ver=1.0`;
   const marsCamUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${formData.earthDate}&camera=${formData.camera}&api_key=${nasaKey}`;
@@ -26,7 +26,7 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
   //const geoKey = process.env.REACT_APP_GMAPS_GEO_KEY;
 
   const handleChange = (e) => {
-    console.log("datechange");
+    // console.log("datechange");
     const { name, value } = e.target;
 
     setFormData({ ...formData, [name]: value });
@@ -35,13 +35,13 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("submitting");
+    // console.log("submitting");
     //if (formData.earthDate)
     fetch(formData.camera ? marsCamUrl : marsNoCamUrl)
       .then((r) => r.json())
       .then((data) => setResults(data.photos));
   };
-  console.log("results: ", results);
+  // console.log("results: ", results);
 
   //========= STYLES ========================================
   const wholePageWrapperStyles = {
@@ -115,7 +115,7 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
                 type="text"
                 name="earthDate"
                 id="date"
-                placeholder="YYYY-MM-DD"
+                placeholder= "YYYY-MM-DD"
                 value={formData.earthDate}
                 onChange={handleChange}
               />

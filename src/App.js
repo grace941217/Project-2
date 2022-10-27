@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-//import { configKeys } from "./config.js";
-import "./App.css";
-import SatPics from "./SatPics.jsx";
-import Media from "./Media.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
 import Login from "./Login";
 import Nav from "./Nav";
 import Home from "./Home";
-import "./index.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Media from "./Media.jsx";
+import SatPics from "./SatPics.jsx";
 import Mars from "./Mars";
 import UserFavs from "./UserFavs";
 
@@ -26,8 +24,8 @@ function App() {
       .then((res) => res.json())
       .then((data) => setAllUsers(data));
   }, []);
-  console.log("allUsers: ", allUsers);
-  console.log("users: ", user);
+  // console.log("allUsers: ", allUsers);
+  // console.log("users: ", user);
 
 
   //======== USER CALLBACKS =============
@@ -45,6 +43,12 @@ function App() {
     setUser(newUser);
   };
   // console.log(user)
+
+  // const renderFavorites = user.favorites.map((fav) => {
+  //   return fav={fav}
+  // })
+   
+ 
 
   const onCreateUser = (user) => {
     // Update Frontend
@@ -74,9 +78,9 @@ function App() {
           <BrowserRouter>
             <Nav />
             <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route path="/media" element={<Media />} />
-              <Route path="/satpics" element={<SatPics />} />
+              <Route path="/" element={<Home user={user}/>} />
+              <Route path="/gallery" element={<Media />} />
+              <Route path="/earth" element={<SatPics />} />
               <Route
                 path="/mars"
                 element={
@@ -89,13 +93,13 @@ function App() {
                 }
               />
               <Route
-                path="/userfavs"
-                element={<UserFavs allUsers={allUsers} loggedIn={loggedIn} />}
+                path="/favorites"
+                element={<UserFavs loggedIn={loggedIn} user={user} />}
               />
             </Routes>
           </BrowserRouter>
         </div>
-       ) : (
+        ) : (
         <Login
           className="login"
           loggedIn={loggedIn}
@@ -110,28 +114,3 @@ function App() {
 }
 
 export default App;
-//   return (
-//     <div style={{ margin: "0" }}>
-//       {loggedIn ? (
-//         <div>
-//           <Nav />
-//           <Media />
-//           <SatPics />
-//         </div>
-//       ) : (
-//         <Login
-//           className="login"
-//           loggedIn={loggedIn}
-//           allUsers={allUsers}
-//           logInToggle={logInToggle}
-//           onSetUser={onSetUser}
-//           onCreateUser={onCreateUser}
-//         />
-//       )}
-//     </div>
-//   );
-// }
-
-// export default App;
-
-

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import background from "./images/login-page-1.jpg";
+// import background from "./images/login-page-1.jpg";
 import backgroundTwo from "./images/nasa-label-cropped2.jpg";
-import backgroundThree from "./images/observation.jpg";
+// import backgroundThree from "./images/observation.jpg";
 
 import Image from "./Image";
 
@@ -10,7 +10,7 @@ function Media() {
   const [confirmedQuery, setConfirmedQuery] = useState("");
   const [results, setResults] = useState([]);
 
-  const { data, href } = results;
+  // const { data, href } = results;
 
   const nasaKey = process.env.REACT_APP_NASA_API_KEY;
   const geoKey = process.env.REACT_APP_GMAPS_GEO_KEY;
@@ -37,9 +37,9 @@ function Media() {
     return <Image key={image.data[0].nasa_id} image={image} />;
   });
 
-  console.log("results: ", results);
-  console.log("query: ", query);
-  console.log("displayedResults: ", displayedResults);
+  // console.log("results: ", results);
+  // console.log("query: ", query);
+  // console.log("displayedResults: ", displayedResults);
 
   //==================== STYLES ================================================
   const outerPageWrapperStyles = {
@@ -49,12 +49,12 @@ function Media() {
     // backgroundImage: `url(${backgroundTwo})`,
     // backgroundSize: "contain",
     // backgroundBlendMode: "lighten",
-    display: "flex",
     //height: "100vh",
-    justifyContent: "flex-start",
     //backgroundColor: "#E9F1F0",
     color: "white",
     //width: "1fr",
+    justifyContent: "flex-start",
+    display: "flex",
     backgroundImage: `url(${backgroundTwo})`,
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
@@ -62,8 +62,8 @@ function Media() {
     flexGrow: "2",
     textAlign: "center",
     fontSize: "1rem",
-    // fontSize: "",
     height: "100%",
+    // fontSize: "",
 
     // backgroundAttachment: "fixed",
   };
@@ -107,7 +107,6 @@ function Media() {
     fontSize: "4rem",
     textShadow: "2px 2px 0px #222",
     // color: "",
-    // color: "",
   };
 
   const logoStyles = {
@@ -128,6 +127,7 @@ function Media() {
     //aligning the whole grid inside its container
     justifyContent: "center",
     // backgroundColor: "rgba(60, 60, 60, 0)",
+    backgroundColor: "rgb(0,0,0,.75)"
   };
 
   const inputStyles = {
@@ -172,6 +172,7 @@ function Media() {
                 name="search"
                 id="search"
                 value={query}
+                placeholder="Enter a Keyword"
                 onChange={handleSearchChange}
                 style={inputStyles}
               />

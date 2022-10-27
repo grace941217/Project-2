@@ -4,177 +4,25 @@
       "id": 1,
       "name": "Joe",
       "password": "123",
-      "favorites": [
-        {
-          "id": 564220,
-          "sol": 1360,
-          "camera": {
-            "id": 20,
-            "name": "FHAZ",
-            "rover_id": 5,
-            "full_name": "Front Hazard Avoidance Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FRB_518233322EDR_F0542280FHAZ00206M_.JPG",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        },
-        {
-          "id": 564221,
-          "sol": 1360,
-          "camera": {
-            "id": 20,
-            "name": "FHAZ",
-            "rover_id": 5,
-            "full_name": "Front Hazard Avoidance Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FLB_518233322EDR_F0542280FHAZ00206M_.JPG",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        },
-        {
-          "id": 564222,
-          "sol": 1360,
-          "camera": {
-            "id": 20,
-            "name": "FHAZ",
-            "rover_id": 5,
-            "full_name": "Front Hazard Avoidance Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FLB_518233101EDR_F0542280FHAZ00206M_.JPG",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        },
-        {
-          "id": 564336,
-          "sol": 1360,
-          "camera": {
-            "id": 24,
-            "name": "MAHLI",
-            "rover_id": 5,
-            "full_name": "Mars Hand Lens Imager"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mhli/1360MH0001220000502184I01_DXXX.jpg",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        }
-      ]
+      "favorites": []
     },
     {
+      "id": 2,
       "name": "Nils",
       "password": "123",
-      "id": 2,
       "favorites": []
     },
     {
+      "id": 3,
       "name": "Adam",
       "password": "123",
-      "id": 3,
       "favorites": []
     },
     {
+      "id": 4,
       "name": "Grace",
       "password": "123",
       "favorites": [
-        {
-          "id": 564221,
-          "sol": 1360,
-          "camera": {
-            "id": 20,
-            "name": "FHAZ",
-            "rover_id": 5,
-            "full_name": "Front Hazard Avoidance Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FLB_518233322EDR_F0542280FHAZ00206M_.JPG",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        },
-        {
-          "id": 564222,
-          "sol": 1360,
-          "camera": {
-            "id": 20,
-            "name": "FHAZ",
-            "rover_id": 5,
-            "full_name": "Front Hazard Avoidance Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FLB_518233101EDR_F0542280FHAZ00206M_.JPG",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        },
-        {
-          "id": 564224,
-          "sol": 1360,
-          "camera": {
-            "id": 20,
-            "name": "FHAZ",
-            "rover_id": 5,
-            "full_name": "Front Hazard Avoidance Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FLB_518226958EDR_F0542280FHAZ00323M_.JPG",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        },
-        {
-          "id": 564220,
-          "sol": 1360,
-          "camera": {
-            "id": 20,
-            "name": "FHAZ",
-            "rover_id": 5,
-            "full_name": "Front Hazard Avoidance Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FRB_518233322EDR_F0542280FHAZ00206M_.JPG",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        },
         {
           "id": 564263,
           "sol": 1360,
@@ -193,66 +41,8 @@
             "launch_date": "2011-11-26",
             "status": "active"
           }
-        },
-        {
-          "id": 564264,
-          "sol": 1360,
-          "camera": {
-            "id": 21,
-            "name": "RHAZ",
-            "rover_id": 5,
-            "full_name": "Rear Hazard Avoidance Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/rcam/RRB_518226992EDR_F0542280RHAZ00323M_.JPG",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        },
-        {
-          "id": 564558,
-          "sol": 1360,
-          "camera": {
-            "id": 22,
-            "name": "MAST",
-            "rover_id": 5,
-            "full_name": "Mast Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01360/mcam/1360MR0066540000701501E01_DXXX.jpg",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
-        },
-        {
-          "id": 564225,
-          "sol": 1360,
-          "camera": {
-            "id": 20,
-            "name": "FHAZ",
-            "rover_id": 5,
-            "full_name": "Front Hazard Avoidance Camera"
-          },
-          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01360/opgs/edr/fcam/FRB_518226958EDR_F0542280FHAZ00323M_.JPG",
-          "earth_date": "2016-06-03",
-          "rover": {
-            "id": 5,
-            "name": "Curiosity",
-            "landing_date": "2012-08-06",
-            "launch_date": "2011-11-26",
-            "status": "active"
-          }
         }
-      ],
-      "id": 4
+      ]
     }
   ]
 }
