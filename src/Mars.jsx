@@ -6,6 +6,7 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
   const [formData, setFormData] = useState({
     earthDate: "",
     camera: "",
+    perRow: "3",
   });
   const [results, setResults] = useState([]);
   // console.log("formData: ", formData);
@@ -80,6 +81,15 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
     backgroundColor: "rgb(120, 120, 120)",
     color: "rgb(219, 219, 219)",
   };
+  const columnInputStyles = {
+    width: "10rem",
+    marginTop: "0.5rem",
+    padding: "0.5rem 0.8rem",
+    outline: "none",
+    border: "none",
+    backgroundColor: "rgb(120, 120, 120)",
+    color: "rgb(219, 219, 219)",
+  };
 
   const searchButtonStyles = {
     width: "10rem",
@@ -92,7 +102,7 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
 
   const marsPicContainer = {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 30fr)",
+    gridTemplateColumns: `repeat(${formData.perRow}, 30fr)`,
     gap: "4rem",
     //aligning items inside the grid segments
     justifyItems: "center",
@@ -115,7 +125,7 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
                 type="text"
                 name="earthDate"
                 id="date"
-                placeholder= "YYYY-MM-DD"
+                placeholder="YYYY-MM-DD"
                 value={formData.earthDate}
                 onChange={handleChange}
               />
@@ -141,6 +151,21 @@ function Mars({ user, loggedIn, allUsers, updateUser }) {
                 <option value="minites">
                   Mini Thermal Emission Spectrometer
                 </option>
+              </select>
+            </label>
+            <label htmlFor="columns" style={labelStyles}>
+              Pics Per Row{" "}
+              <select
+                name="perRow"
+                id=""
+                style={columnInputStyles}
+                onChange={handleChange}
+                value={formData.perRow}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
               </select>
             </label>
             <button

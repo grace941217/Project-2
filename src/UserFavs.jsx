@@ -26,7 +26,7 @@ function UserFavs({ user }) {
     backgroundAttachment: "fixed",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    height: "100vh",
+    minHeight: "100vh",
   };
 
   const imageContainerStyles = {

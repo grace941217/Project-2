@@ -69,6 +69,15 @@ function MarsPic({ image, user, allUsers, updateUser }) {
     boxShadow: "0px 0px 10px rgba(5, 5, 5, 1)",
   };
 
+  const likeButtonStyles = {
+    backgroundColor: "rgb(219, 219, 219)",
+    border: "2px solid gray",
+    padding: "0.4rem 0.9rem",
+    borderRadius: "10px",
+    fontWeight: "700",
+    color: "#333",
+  };
+
   //============================================================
   return (
     <div style={imageContainerStyles}>
@@ -77,7 +86,7 @@ function MarsPic({ image, user, allUsers, updateUser }) {
         Taken by <span style={roverNameStyles}>{roverName}</span>'s
       </p>
       <p style={captionStylesBottom}> {cameraName}</p>
-      <button onClick={handleLikeClick}>
+      <button onClick={handleLikeClick} style={likeButtonStyles}>
         {isLiked ? "In favorites" : "Click to Favorite"}
       </button>
     </div>
