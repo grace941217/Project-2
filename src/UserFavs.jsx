@@ -6,15 +6,12 @@ function UserFavs({ user }) {
   const { favorites } = user;
   const listFavs = favorites.map((image) => {
     return (
-      <>
-        <FavoritePic
-          src={image.img_src}
-          alt="favorite"
-          image={image}
-          key={image.id}
-        />
-        {/* <div>{fav.rover.name}</div> */}
-      </>
+      <FavoritePic
+        src={image.img_src}
+        alt="favorite"
+        image={image}
+        key={image.id}
+      />
     );
   });
 

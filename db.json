@@ -256,6 +256,63 @@
             "launch_date": "2011-11-26",
             "status": "active"
           }
+        },
+        {
+          "id": 570347,
+          "sol": 1386,
+          "camera": {
+            "id": 25,
+            "name": "MARDI",
+            "rover_id": 5,
+            "full_name": "Mars Descent Imager"
+          },
+          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/01386/mrdi/1386MD0005250000200576E01_DXXX.jpg",
+          "earth_date": "2016-06-30",
+          "rover": {
+            "id": 5,
+            "name": "Curiosity",
+            "landing_date": "2012-08-06",
+            "launch_date": "2011-11-26",
+            "status": "active"
+          }
+        },
+        {
+          "id": 465950,
+          "sol": 399,
+          "camera": {
+            "id": 22,
+            "name": "MAST",
+            "rover_id": 5,
+            "full_name": "Mast Camera"
+          },
+          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/msss/00399/mcam/0399MR0016570000302243E01_DXXX.jpg",
+          "earth_date": "2013-09-19",
+          "rover": {
+            "id": 5,
+            "name": "Curiosity",
+            "landing_date": "2012-08-06",
+            "launch_date": "2011-11-26",
+            "status": "active"
+          }
+        },
+        {
+          "id": 46067,
+          "sol": 360,
+          "camera": {
+            "id": 26,
+            "name": "NAVCAM",
+            "rover_id": 5,
+            "full_name": "Navigation Camera"
+          },
+          "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00360/opgs/edr/ncam/NRB_429457293EDR_F0120000NCAM00320M_.JPG",
+          "earth_date": "2013-08-10",
+          "rover": {
+            "id": 5,
+            "name": "Curiosity",
+            "landing_date": "2012-08-06",
+            "launch_date": "2011-11-26",
+            "status": "active"
+          }
         }
       ],
       "id": 5
